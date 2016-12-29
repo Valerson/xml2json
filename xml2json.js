@@ -167,7 +167,7 @@ function replaceAttributes(xmlStr) {
                     
                     var attr = attrs[j];
                     var attrName = attr.substring(0, attr.indexOf('='));
-                    var attrValue = attr.substring(attr.indexOf('"') + 1, attr.lastIndexOf('"'));
+                    var attrValue = attr.substring(attr.indexOf('"') + 1, attr.lastIndexOf('"')) || attr.substring(attr.indexOf("'") + 1, attr.lastIndexOf("'"));
                     
                     newTag += "<" + attrName + ">" + attrValue + "</" + attrName + ">";
                 }
